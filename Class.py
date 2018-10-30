@@ -85,7 +85,7 @@ nameMatch = {
 
 Calendars = [
     { 'name': 'BICS', 'id': '71bttebnjrf4aei0mmrot9ar5g@group.calendar.google.com'},
-    { 'name': 'Cameron', 'id': 'qt87k4b77p5gn6qlif03ubrjb4@group.calendar.google.com'},
+    { 'name': 'Cameron', 'id': 'cdl3022@gmail.com'},
     { 'name': 'Santiago', 'id': 'k9do3dsnml9f1t2hhgohb4nkm0@group.calendar.google.com'},
     { 'name': 'Rahul', 'id': 'aesodv2i11p1k7erlftmfrp240@group.calendar.google.com'},
     { 'name': 'Ana', 'id': 'ptp7f56msrfe4j3hso1g8s5vc4@group.calendar.google.com'},

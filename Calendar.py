@@ -23,7 +23,7 @@ def modifyCal(Events):
         flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('calendar', 'v3', http=creds.authorize(Http()))
-    
+
     #Call the calendar APIs
     now = datetime.datetime.utcnow()
     now = datetime.datetime(now.year, now.month, 1, 0, 0, 0, 0).isoformat() + 'Z' # 'Z' indicates UTC time
@@ -33,15 +33,17 @@ def modifyCal(Events):
 
 def removeEvents(service, cal, now):
     '''
-    Removes all events from the calendar starting at the begining of the present month
+    Removes all BIC or Beeper events from the calendar starting at the begining of the present month
     '''
     print("Removing current events for " + cal["name"])
     events_result = service.events().list(calendarId=cal["id"], timeMin=now,
                                         singleEvents=True,
                                         orderBy='startTime').execute()
     for event in events_result["items"]:
-        service.events().delete(calendarId=cal["id"], eventId=event["id"], sendNotifications=None, sendUpdates=None).execute()
-        
+        check = ['BIC', 'Beeper']
+        if any(x in event['summary'] for x in check):
+            service.events().delete(calendarId=cal["id"], eventId=event["id"], sendNotifications=None, sendUpdates=None).execute()
+
 def addEvents(Events, service, cal):
     '''
     Pushes events to calendars via API
@@ -62,5 +64,3 @@ def addEvents(Events, service, cal):
                 elif event.Beeper is True:
                     body=BodyBeep(event)
                 service.events().insert(calendarId=cal["id"], body=body).execute()
-    
-    
