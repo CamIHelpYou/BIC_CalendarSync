@@ -65,16 +65,17 @@ monthMatch = {'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'Ju
 
 nameMatch = {
     'acorredo': 'Alonso',
+    'aguckin': 'Alex',
     'ahhaq': 'Ahsan',
     'aksmanch': 'Akshay',
     'anarami': 'Ana',
+    'bhnegi': 'Bheem',
     'camli': 'Cameron',
     'danirowe': 'Dan',
     'mpsaltis': 'Matt',
     'mromeroa': 'Martin',
     'oriverav': 'Omar',
     'ragupta3': 'Rahul',
-    'rosimpki': 'Ron',
     'scherrav': 'Silpa',
     'sincadaz': 'Santiago',
     'spmann': 'Sean',
@@ -90,6 +91,5 @@ Calendars = [
     { 'name': 'Rahul', 'id': 'aesodv2i11p1k7erlftmfrp240@group.calendar.google.com'},
     { 'name': 'Ana', 'id': 'ptp7f56msrfe4j3hso1g8s5vc4@group.calendar.google.com'},
     { 'name': 'Titus', 'id': 'ajnp0kaduucav7k2nv0tsqd6v4@group.calendar.google.com'},
-    { 'name': 'Ron', 'id': '7nlu6u04dho1lhkt2fg94leb9c@group.calendar.google.com'},
     { 'name': 'Silpa', 'id': '16ug28r67jfa5gd9afng0qtl14@group.calendar.google.com'}
      ]
