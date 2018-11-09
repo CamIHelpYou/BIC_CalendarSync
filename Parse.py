@@ -26,22 +26,23 @@ def createEvents(text, date, Events):
     month = 0
     day = 0
     Beepers = []
-    
+
     for line in text:
         monthSearch = re.search(r'(?<=\s-\s[1]\s-\s)\w+', line)
         daySearch = re.search(r'(\s-\s)([0-9]+)(\s-\s)', line)
         bicName = re.search(r'(\w+)(\s-\sBIC)', line)
         beepName = re.search(r'(\w+)(\s-\sBeeper)', line)
-        
+        Holiday = re.search(r'(\w+)(\s-\sPH)', line)
+
         if monthSearch is not None:
             if month is 0:
                 month = monthMatch[monthSearch.group(0)]
             else:
                 break
-            
+
         if daySearch is not None:
             day = int(daySearch.group(2))
-            
+
         if bicName is not None:
             name = nameMatch[bicName.group(1)]
             if name in east:
@@ -49,16 +50,23 @@ def createEvents(text, date, Events):
             elif name in west:
                 tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, False, True)
             Events.append(tmpEvent)
-            
+
         if beepName is not None:
             name = nameMatch[beepName.group(1)]
             tmpEvent = Event(False, True, datetime.date(date.year, month, day), name, False, False)
             Events.append(tmpEvent)
             Beepers.append(tmpEvent)
-        
-        
+
+        if Holiday is not None:
+            name = nameMatch[Holiday.group(1)]
+            if name in east:
+                tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, True, False)
+            elif name in west:
+                tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, False, True)
+            Events.append(tmpEvent)
+
     Events = insertBeeper(Beepers, Events)
-    
+
 
 def insertBeeper(Beepers, Events):
     '''
@@ -72,5 +80,3 @@ def insertBeeper(Beepers, Events):
                 else:
                     event.oncall = beep.name
     return Events
-            
-            
