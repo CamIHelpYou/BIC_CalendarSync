@@ -5,7 +5,7 @@ Created on Oct 19, 2018
 '''
 
 
-class Month:
+class Month(object):
     def __init__(self, month, year, epoch, html):
         self.month = month
         self.year = year
@@ -13,7 +13,7 @@ class Month:
         self.html = html
 
 
-class Event:
+class Event(object):
     def __init__(self, BIC, Beeper, date, name, east, west):
         self.BIC = BIC
         self.Beeper = Beeper
