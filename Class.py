@@ -76,6 +76,7 @@ nameMatch = {
     'mromeroa': 'Martin',
     'oriverav': 'Omar',
     'ragupta3': 'Rahul',
+    'rosimpki': 'Ron',
     'scherrav': 'Silpa',
     'sincadaz': 'Santiago',
     'spmann': 'Sean',

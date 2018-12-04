@@ -44,26 +44,40 @@ def createEvents(text, date, Events):
             day = int(daySearch.group(2))
 
         if bicName is not None:
-            name = nameMatch[bicName.group(1)]
+            if nameMatch.get(bicName.group(1)) is None:
+                print(bicName.group(1) + " is not defined")
+                name = ""
+            else:
+                name = nameMatch[bicName.group(1)]
             if name in east:
                 tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, True, False)
+                Events.append(tmpEvent)
             elif name in west:
                 tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, False, True)
-            Events.append(tmpEvent)
+                Events.append(tmpEvent)
 
         if beepName is not None:
-            name = nameMatch[beepName.group(1)]
-            tmpEvent = Event(False, True, datetime.date(date.year, month, day), name, False, False)
-            Events.append(tmpEvent)
-            Beepers.append(tmpEvent)
+            if nameMatch.get(beepName.group(1)) is None:
+                print(bicName.group(1) + " is not defined")
+                name = ""
+            else:
+                name = nameMatch[beepName.group(1)]
+                tmpEvent = Event(False, True, datetime.date(date.year, month, day), name, False, False)
+                Events.append(tmpEvent)
+                Beepers.append(tmpEvent)
 
         if Holiday is not None:
-            name = nameMatch[Holiday.group(1)]
+            if nameMatch.get(Holiday.group(1)) is None:
+                print(bicName.group(1) + " is not defined")
+                name = ""
+            else:
+                name = nameMatch[Holiday.group(1)]
             if name in east:
                 tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, True, False)
+                Events.append(tmpEvent)
             elif name in west:
                 tmpEvent = Event(True, False, datetime.date(date.year, month, day), name, False, True)
-            Events.append(tmpEvent)
+                Events.append(tmpEvent)
 
     Events = insertBeeper(Beepers, Events)
 
