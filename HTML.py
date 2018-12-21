@@ -21,18 +21,18 @@ def getDates(user, password):
 
     dates = []
     today = datetime.date.today()
-    today = datetime.date(today.year, today.month, 1)
-    epochTime = datetime.datetime(today.year, today.month, 1).timestamp()
+    today = datetime.date(today.year, today.month, 15)
+    epochTime = datetime.datetime(today.year, today.month, 15).timestamp()
     url = 'https://xcalendar.cisco.com/index.php?VIEWDATE=' + str(epochTime) + '&VIEWTYPE=month&GROUP=sspt-dna-us&FILTER=0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0'
     tmpMonth = Month(today.month, today.year, epochTime, simple_get(url, user, password))
     dates.append(tmpMonth)
 
     for x in range(1,6):
         if today.month == 12:
-            today = datetime.date(today.year + 1, 1, 1)
+            today = datetime.date(today.year + 1, 1, 15)
         else:
-            today = datetime.date(today.year, today.month + 1, 1)
-        epochTime = datetime.datetime(today.year, today.month, 1).timestamp()
+            today = datetime.date(today.year, today.month + 1, 15)
+        epochTime = datetime.datetime(today.year, today.month, 15).timestamp()
         url = 'https://xcalendar.cisco.com/index.php?VIEWDATE=' + str(epochTime) + '&VIEWTYPE=month&GROUP=sspt-dna-us&FILTER=0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0'
         tmpMonth = Month(today.month, today.year, epochTime, simple_get(url, user, password))
         dates.append(tmpMonth)
