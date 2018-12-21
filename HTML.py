@@ -22,7 +22,7 @@ def getDates(user, password):
     dates = []
     today = datetime.date.today()
     today = datetime.date(today.year, today.month, 1)
-    epochTime = epochTime = datetime.datetime(today.year, today.month, 1).timestamp()
+    epochTime = datetime.datetime(today.year, today.month, 1).timestamp()
     url = 'https://xcalendar.cisco.com/index.php?VIEWDATE=' + str(epochTime) + '&VIEWTYPE=month&GROUP=sspt-dna-us&FILTER=0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0'
     tmpMonth = Month(today.month, today.year, epochTime, simple_get(url, user, password))
     dates.append(tmpMonth)
