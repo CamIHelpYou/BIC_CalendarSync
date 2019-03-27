@@ -40,6 +40,9 @@ def createEvents(text, date, Events):
             else:
                 break
 
+        if month is 0:
+            continue
+
         if daySearch is not None:
             day = int(daySearch.group(2))
 
@@ -61,7 +64,7 @@ def createEvents(text, date, Events):
                 print(bicName.group(1) + " is not defined")
                 name = ""
             else:
-                name = nameMatch[beepName.group(1)]
+                name = nameMatch[ beepName.group(1)]
                 tmpEvent = Event(False, True, datetime.date(date.year, month, day), name, False, False)
                 Events.append(tmpEvent)
                 Beepers.append(tmpEvent)
