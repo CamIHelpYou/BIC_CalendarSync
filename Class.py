@@ -56,9 +56,9 @@ def BodyBeep(event):
     return body
 
 
-east = ['Alonso', 'Akshay', 'Ana', 'Dan', 'Matt', 'Omar', 'Stephen', 'Sufian', 'Titus']
+east = ['Alonso', 'Akshay', 'Ana', 'Dan', 'Julio', 'Omar', 'Ray', 'Stephen', 'Sufian', 'Titus']
 
-west = ['Ahsan', 'Cameron', 'Martin', 'Rahul', 'Ron', 'Silpa', 'Santiago']
+west = ['Ahsan', 'Cameron', 'Jon', 'Martin', 'Rahul', 'Ron', 'Roy', 'Silpa', 'Santiago']
 
 monthMatch = {'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'June': 6,
                   'July': 7, 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12}
@@ -74,10 +74,9 @@ nameMatch = {
     'danirowe': 'Dan',
     'jalejand': 'Jon',
     'julijime': 'Julio',
-    'mpsaltis': 'Matt',
     'mromeroa': 'Martin',
     'oriverav': 'Omar',
-    'raywhiti': 'Raymond',
+    'raywhiti': 'Ray',
     'roharrin': 'Roy',
     'rosimpki': 'Ron',
     'scherrav': 'Silpa',
