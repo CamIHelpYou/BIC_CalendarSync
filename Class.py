@@ -56,7 +56,7 @@ def BodyBeep(event):
     return body
 
 
-east = ['Alonso', 'Akshay', 'Ana', 'Dan', 'Julio', 'Omar', 'Ray', 'Stephen', 'Sufian', 'Titus']
+east = ['Alonso', 'Akshay', 'Ana', 'Bryan', 'Dan', 'Julio', 'Omar', 'Ray', 'Stephen', 'Sufian', 'Titus']
 
 west = ['Ahsan', 'Cameron', 'Jon', 'Martin', 'Rahul', 'Ron', 'Roy', 'Silpa', 'Santiago']
 
@@ -70,6 +70,7 @@ nameMatch = {
     'aksmanch': 'Akshay',
     'anarami': 'Ana',
     'bhnegi': 'Bheem',
+    'bfenlaso': 'Bryan',
     'camli': 'Cameron',
     'danirowe': 'Dan',
     'jalejand': 'Jon',
@@ -89,8 +90,8 @@ Calendars = [
     { 'name': 'BICS', 'id': '71bttebnjrf4aei0mmrot9ar5g@group.calendar.google.com'},
     { 'name': 'Cameron', 'id': 'cdl3022@gmail.com'},
     { 'name': 'Santiago', 'id': 'k9do3dsnml9f1t2hhgohb4nkm0@group.calendar.google.com'},
-    { 'name': 'Rahul', 'id': 'aesodv2i11p1k7erlftmfrp240@group.calendar.google.com'},
     { 'name': 'Ana', 'id': 'ptp7f56msrfe4j3hso1g8s5vc4@group.calendar.google.com'},
     { 'name': 'Titus', 'id': 'ajnp0kaduucav7k2nv0tsqd6v4@group.calendar.google.com'},
+    { 'name': 'Ron', 'id': 'hlfk5gqetcr58laad9ismhcmqk@group.calendar.google.com'},
     { 'name': 'Silpa', 'id': '16ug28r67jfa5gd9afng0qtl14@group.calendar.google.com'}
      ]
