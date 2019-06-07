@@ -1,0 +1,11 @@
+#Dependencies
+#Usage:
+#	$pip install -r requirements.txt
+
+datetime
+re
+googleapiclient.discovery
+httplib2
+oauth2client
+getpass
+bs4
